@@ -12,13 +12,13 @@ USE nightsound;
 DROP TABLE IF EXISTS Books;
 
 CREATE TABLE Books (
-  UserID INT NOT NULL AUTO_INCREMENT,
+  CheckoutID INT NOT NULL AUTO_INCREMENT,
   FirstName VARCHAR(50),
   LastName VARCHAR(50),
   Email VARCHAR(50),
   BookTitle NOT NULL VARCHAR(50),
   DueDate VARCHAR(50),
-  Overdue VARCHAR(50)
+  Overdue VARCHAR(50),
   
   PRIMARY KEY(BookTitle) 
 );

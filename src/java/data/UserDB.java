@@ -23,13 +23,16 @@ public class UserDB {
         PreparedStatement statement = null;
 
         String query
-                = "INSERT INTO User (Email, FirstName, LastName) "
-                + "VALUES (?, ?, ?)";
+                = "INSERT INTO User (FirstName, LastName, Email, BookTitle, DueDate, Overdue) "
+                + "VALUES (?, ?, ?, ?, ?, ?)";
         try {
             statement = connection.prepareStatement(query);
-            statement.setString(1, user.getEmail());
-            statement.setString(2, user.getFirstName());
-            statement.setString(3, user.getLastName());
+            statement.setString(1, user.getFirstName());
+            statement.setString(2, user.getLastName());
+            statement.setString(3, user.getEmail());
+            statement.setString(4, user.getBookTitle());
+            statement.setString(5, user.getDueDate());
+            statement.setString(6, user.getOverdue());
             return statement.executeUpdate();
         } catch (SQLException e) {
             System.out.println(e);
@@ -112,29 +115,29 @@ public class UserDB {
     public static User selectUser(String email) {
         ConnectionPool pool = ConnectionPool.getInstance();
         Connection connection = pool.getConnection();
-        PreparedStatement ps = null;
-        ResultSet rs = null;
+        PreparedStatement statement = null;
+        ResultSet set = null;
 
         String query = "SELECT * FROM User "
                 + "WHERE Email = ?";
         try {
-            ps = connection.prepareStatement(query);
-            ps.setString(1, email);
-            rs = ps.executeQuery();
+            statement = connection.prepareStatement(query);
+            statement.setString(1, email);
+            set = statement.executeQuery();
             User user = null;
-            if (rs.next()) {
+            if (set.next()) {
                 user = new User();
-                user.setFirstName(rs.getString("FirstName"));
-                user.setLastName(rs.getString("LastName"));
-                user.setEmail(rs.getString("Email"));
+                user.setFirstName(set.getString("FirstName"));
+                user.setLastName(set.getString("LastName"));
+                user.setEmail(set.getString("Email"));
             }
             return user;
         } catch (SQLException e) {
             System.out.println(e);
             return null;
         } finally {
-            DBUtil.closeResultSet(rs);
-            DBUtil.closePreparedStatement(ps);
+            DBUtil.closeResultSet(set);
+            DBUtil.closePreparedStatement(statement);
             pool.freeConnection(connection);
         }
     }
@@ -142,20 +145,20 @@ public class UserDB {
     public static ArrayList<User> selectUsers() {
         ConnectionPool pool = ConnectionPool.getInstance();
         Connection connection = pool.getConnection();
-        PreparedStatement ps = null;
-        ResultSet rs = null;
+        PreparedStatement statement = null;
+        ResultSet set = null;
         
         String query = "SELECT * FROM User";
         try {
-            ps = connection.prepareStatement(query);
-            rs = ps.executeQuery();
+            statement = connection.prepareStatement(query);
+            set = statement.executeQuery();
             ArrayList<User> users = new ArrayList<User>();
-            while (rs.next())
+            while (set.next())
             {
                 User user = new User();
-                user.setFirstName(rs.getString("FirstName"));
-                user.setLastName(rs.getString("LastName"));
-                user.setEmail(rs.getString("Email"));
+                user.setFirstName(set.getString("FirstName"));
+                user.setLastName(set.getString("LastName"));
+                user.setEmail(set.getString("Email"));
                 users.add(user);
             }
             return users;
@@ -163,8 +166,8 @@ public class UserDB {
             System.out.println(e);
             return null;
         } finally {
-            DBUtil.closeResultSet(rs);
-            DBUtil.closePreparedStatement(ps);
+            DBUtil.closeResultSet(set);
+            DBUtil.closePreparedStatement(statement);
             pool.freeConnection(connection);
         }
     }
