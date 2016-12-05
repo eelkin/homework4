@@ -7,6 +7,19 @@
  */
 package model;
 
+
+import java.util.Date;
+
+import java.text.SimpleDateFormat;
+
+import java.util.Calendar;
+import java.util.GregorianCalendar;
+
+/**
+ * 
+ * The User Javabean. May need to add code to manipulate SQL Date.
+ */
+
 public class User {
   
     private String firstName;
