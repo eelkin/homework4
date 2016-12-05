@@ -49,8 +49,16 @@ public class LibraryServlet extends HttpServlet {
             //code for adding to database
             url = "/books.jsp";
         }
-        //adds book to database, reroutes them to thanks.jsp
+        //this may need some work
         else if (action.equals("add")) {
+            //gets user
+            String email = request.getParameter("email");
+            User user = UserDB.selectUser(email);
+            
+            //inserts the user
+            UserDB.insert(user);
+            
+            //reroutes to thanks.jsp
             url = "/thanks.jsp";
         }
         

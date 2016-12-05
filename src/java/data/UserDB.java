@@ -130,6 +130,10 @@ public class UserDB {
                 user.setFirstName(set.getString("FirstName"));
                 user.setLastName(set.getString("LastName"));
                 user.setEmail(set.getString("Email"));
+                user.setBookTitle(set.getString("BookTitle"));
+                //change due date to datetime
+                user.setDueDate(set.getString("DueDate"));
+                user.setOverdue(set.getString("Overdue"));
             }
             return user;
         } catch (SQLException e) {
@@ -159,6 +163,10 @@ public class UserDB {
                 user.setFirstName(set.getString("FirstName"));
                 user.setLastName(set.getString("LastName"));
                 user.setEmail(set.getString("Email"));
+                user.setBookTitle(set.getString("BookTitle"));
+                //change due date to datetime
+                user.setDueDate(set.getString("DueDate"));
+                user.setOverdue(set.getString("Overdue"));
                 users.add(user);
             }
             return users;

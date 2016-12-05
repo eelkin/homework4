@@ -17,7 +17,7 @@ CREATE TABLE Books (
   LastName VARCHAR(50),
   Email VARCHAR(50),
   BookTitle NOT NULL VARCHAR(50),
-  DueDate VARCHAR(50),
+  DueDate DATETIME,
   Overdue VARCHAR(50),
   
   PRIMARY KEY(BookTitle) 
