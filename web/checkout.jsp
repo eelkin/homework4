@@ -19,7 +19,7 @@ Campus Box 7947, Elon University, Elon, NC 27244
     <label class="pad-top">Book Title:</label>
     <input type="text" name="bookTitle" value="${user.bookTitle}" required><br>
     <label>&nbsp;</label>
-    <input type="submit" value="Checkout" class="margin_left">
+    <input type="submit" value="Checkout" class="margin-left">
   </form>
     
 <%@ include file="includes/footer.html" %>
