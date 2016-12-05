@@ -7,10 +7,6 @@
  */
 package model;
 
-/**
- *
- * @author eelkin
- */
 public class User {
   
 }

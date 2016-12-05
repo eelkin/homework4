@@ -7,10 +7,6 @@
  */
 package data;
 
-/**
- *
- * @author eelkin
- */
 public class UserDB {
   
 }
