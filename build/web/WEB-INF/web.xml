@@ -1,25 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--
-Copyright (c) 2016 Christy Smith
-Campus Box 7915, Elon University, Elon, NC 27244
-
-Copyright (c) 2016 Evan Elkin
-Campus Box 7947, Elon University, Elon, NC 27244
-
-Copyright (c) 2016 Breslin Wiley
-Campus Box 7947, Elon University, Elon, NC 27244
--->
-<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
-	 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	 xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
-	 version="3.1">
-    
+<web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
+    <servlet>
+        <servlet-name>LibraryServlet</servlet-name>
+        <servlet-class>servlets.LibraryServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>LibraryServlet</servlet-name>
+        <url-pattern>/library</url-pattern>
+    </servlet-mapping>
     <session-config>
         <session-timeout>
             30
         </session-timeout>
     </session-config>
-    <welcome-file-list>
-        <welcome-file>index.jsp</welcome-file>
-    </welcome-file-list>
 </web-app>
