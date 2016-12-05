@@ -12,18 +12,13 @@ Campus Box 7947, Elon University, Elon, NC 27244
 
 <c:import url="includes/header.html" /> 
 --%>
-<%@ include file="includes/header.html" %>
+<%@ include file="/includes/header.html" %>
 
-    <header>
-      <img src="images/belk.jpg" alt="belk">
-      <h1>Belk Library</h1>
-    </header>
-    
     <main>
-      <p><a href="checkout.jsp">Check out a book</a></p><br/>
+      <p><a href="/checkout.jsp">Check out a book</a></p><br/>
       <a>Manage checked out books</a>
     </main>
     
-<%@ include file="includes/footer.html" %>
+<%@ include file="/includes/footer.html" %>
     
 <%--<c:import url="includes/footer.html" />--%>
