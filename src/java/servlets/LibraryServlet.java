@@ -32,7 +32,26 @@ public class LibraryServlet extends HttpServlet {
         
         String action = request.getParameter("action");
         if (action == null) {
-            action = "display_users";
+            //action = "display_users";
+            action = "join";
+        }
+        //reroutes user to index.jsp
+        if (action.equals("join")) {
+            url = "/index.jsp";
+        } 
+        //sends user to checkout page
+        else if (action.equals("checkout")) {
+            //code for adding to database
+            url = "/checkout.jsp";
+        }
+        //sends user to books page
+        else if (action.equals("books")) {
+            //code for adding to database
+            url = "/books.jsp";
+        }
+        //adds book to database, reroutes them to thanks.jsp
+        else if (action.equals("add")) {
+            url = "/thanks.jsp";
         }
         
         // perform action and set URL to appropriate page
@@ -74,6 +93,7 @@ public class LibraryServlet extends HttpServlet {
             ArrayList<User> users = UserDB.selectUsers();            
             request.setAttribute("users", users);            
         }
+        
         
         getServletContext()
                 .getRequestDispatcher(url)

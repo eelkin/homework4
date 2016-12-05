@@ -9,7 +9,6 @@ Campus Box 7947, Elon University, Elon, NC 27244
 <%@ include file="header.html" %>
 
 <h1>Currently checked out books</h1>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <table>
 
   <tr>
@@ -28,12 +27,13 @@ Campus Box 7947, Elon University, Elon, NC 27244
     <td>${user.bookTitle}</td>
     <td>${user.dueDate}</td>
     <td>${user.overdue}</td>
-    <td><a href="userAdmin?action=display_user&amp;email=${user.email}">Update</a></td>
-    <%--Change to check in button --%>
-    <td><a href="userAdmin?action=delete_user&amp;email=${user.email}">Delete</a></td>
+    <%-- Replace with buttons --%>
+    <td><a href="userAdmin?action=delete_user&amp;email=${user.email}">Check In</a></td>
   </tr>
   </c:forEach>
 
 </table>
+  
+  <p><a href="library">Return to front page</a></p>
   
 <%@ include file="footer.html" %>

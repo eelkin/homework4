@@ -13,5 +13,5 @@ Campus Box 7947, Elon University, Elon, NC 27244
     A friendly email reminder will be sent to you if your book becomes
     overdue.
   </p>
-  <p><a href="/library">Return to front page</a></p>
+  <p><a href="library">Return to front page</a></p>
 <%@ include file="footer.html" %>

@@ -12,17 +12,29 @@ public class User {
     private String firstName;
     private String lastName;
     private String email;
+    private String bookTitle;
+    //work with calendar/date
+    private String dueDate;
+    private String overdue;
 
     public User() {
         firstName = "";
         lastName = "";
         email = "";
+        bookTitle = "";
+        //should be date
+        dueDate = "";
+        overdue = "";
     }
 
-    public User(String firstName, String lastName, String email) {
+    public User(String firstName, String lastName, String email,
+            String bookTitle, String dueDate, String overdue) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
+        this.bookTitle = bookTitle;
+        this.dueDate = dueDate;
+        this.overdue = overdue;
     }
 
     public String getFirstName() {
@@ -48,5 +60,32 @@ public class User {
     public void setEmail(String email) {
         this.email = email;
     }
+    
+    public String getBookTitle() {
+        return bookTitle;
+    }
+
+    public void setBookTitle(String bookTitle) {
+        this.bookTitle = bookTitle;
+    }
+    
+    //getter/setter should be date
+    public String getDueDate() {
+        return dueDate;
+    }
+
+    public void setDueDate(String dueDate) {
+        this.dueDate = dueDate;
+    }
+    
+    public String getOverdue() {
+        return overdue;
+    }
+
+    public void setOverdue(String overdue) {
+        this.overdue = overdue;
+    }
+    
+    
   
 }
