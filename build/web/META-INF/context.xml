@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Context path="/homework4"/>
+<Context path="/homework4">
   <Resource name="jdbc/MySQLDS" auth="Container" 
     driverClassName="com.mysql.jdbc.Driver" 
     url="jdbc:mysql://localhost:3306/nightsound" 

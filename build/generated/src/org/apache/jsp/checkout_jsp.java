@@ -13,8 +13,8 @@ public final class checkout_jsp extends org.apache.jasper.runtime.HttpJspBase
 
   static {
     _jspx_dependants = new java.util.ArrayList<String>(2);
-    _jspx_dependants.add("/includes/header.html");
-    _jspx_dependants.add("/includes/footer.html");
+    _jspx_dependants.add("/header.html");
+    _jspx_dependants.add("/footer.html");
   }
 
   private org.glassfish.jsp.api.ResourceInjector _jspx_resourceInjector;
@@ -72,28 +72,32 @@ public final class checkout_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n");
       out.write("</head>\n");
       out.write("<body>\n");
+      out.write("  <header>\n");
+      out.write("    <img src=\"images/belk.jpg\" alt=\"belk\">\n");
+      out.write("    <h1>Belk Library</h1>\n");
+      out.write("  </header>\n");
       out.write("\n");
       out.write("\n");
       out.write("  <form action=\"library\" method=\"post\">\n");
       out.write("    <input type=\"hidden\" name=\"action\" value=\"add\">        \n");
-      out.write("    <label class=\"pad_top\">First Name:</label>\n");
+      out.write("    <label class=\"pad-top\">First Name:</label>\n");
       out.write("    <input type=\"text\" name=\"firstName\" value=\"");
       out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${user.firstName}", java.lang.String.class, (PageContext)_jspx_page_context, null));
-      out.write("\"><br>\n");
-      out.write("    <label class=\"pad_top\">Last Name:</label>\n");
+      out.write("\" required><br>\n");
+      out.write("    <label class=\"pad-top\">Last Name:</label>\n");
       out.write("    <input type=\"text\" name=\"lastName\" value=\"");
       out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${user.lastName}", java.lang.String.class, (PageContext)_jspx_page_context, null));
-      out.write("\"><br>\n");
-      out.write("    <label class=\"pad_top\">Email Address:</label>\n");
+      out.write("\" required><br>\n");
+      out.write("    <label class=\"pad-top\">Email Address:</label>\n");
       out.write("    <input type=\"email\" name=\"email\" value=\"");
       out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${user.email}", java.lang.String.class, (PageContext)_jspx_page_context, null));
-      out.write("\"><br>\n");
-      out.write("    <label class=\"pad_top\">Book Title:</label>\n");
+      out.write("\" required><br>\n");
+      out.write("    <label class=\"pad-top\">Book Title:</label>\n");
       out.write("    <input type=\"text\" name=\"bookTitle\" value=\"");
       out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${user.bookTitle}", java.lang.String.class, (PageContext)_jspx_page_context, null));
-      out.write("\"><br>\n");
+      out.write("\" required><br>\n");
       out.write("    <label>&nbsp;</label>\n");
-      out.write("    <input type=\"submit\" value=\"Join Now\" class=\"margin_left\">\n");
+      out.write("    <input type=\"submit\" value=\"Checkout\" class=\"margin-left\">\n");
       out.write("  </form>\n");
       out.write("    \n");
       out.write("<!--\n");
@@ -109,7 +113,8 @@ public final class checkout_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("</footer>\n");
       out.write("</body>\n");
       out.write("</html>\n");
-      out.write(">\n");
+      out.write("\n");
+      out.write("\n");
       out.write("\n");
     } catch (Throwable t) {
       if (!(t instanceof SkipPageException)){

@@ -5,8 +5,8 @@ Campus Box 7947, Elon University, Elon, NC 27244
 Copyright (c) 2016 Breslin Wiley
 Campus Box 7947, Elon University, Elon, NC 27244
 -->
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@ include file="/includes/header.html" %>
+
+<%@ include file="header.html" %>
 
 <h1>Currently checked out books</h1>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
@@ -36,4 +36,4 @@ Campus Box 7947, Elon University, Elon, NC 27244
 
 </table>
   
-<%@ include file="/includes/footer.html" %>
+<%@ include file="footer.html" %>

@@ -13,8 +13,8 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
 
   static {
     _jspx_dependants = new java.util.ArrayList<String>(2);
-    _jspx_dependants.add("/includes/header.html");
-    _jspx_dependants.add("/includes/footer.html");
+    _jspx_dependants.add("/header.html");
+    _jspx_dependants.add("/footer.html");
   }
 
   private org.glassfish.jsp.api.ResourceInjector _jspx_resourceInjector;
@@ -47,14 +47,7 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       _jspx_out = out;
       _jspx_resourceInjector = (org.glassfish.jsp.api.ResourceInjector) application.getAttribute("com.sun.appserv.jsp.resource.injector");
 
-      out.write("<!--\n");
-      out.write("Copyright (c) 2016 Evan Elkin\n");
-      out.write("Campus Box 7947, Elon University, Elon, NC 27244\n");
-      out.write("\n");
-      out.write("Copyright (c) 2016 Breslin Wiley\n");
-      out.write("Campus Box 7947, Elon University, Elon, NC 27244\n");
-      out.write("-->\n");
-      out.write("\n");
+      out.write(' ');
       out.write('\n');
       out.write("<!--\n");
       out.write("Copyright (c) 2016 Evan Elkin\n");
@@ -80,7 +73,7 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\n");
       out.write("\n");
       out.write("    <main>\n");
-      out.write("      <p><a href=\"/checkout.jsp\">Check out a book</a></p><br/>\n");
+      out.write("      <p><a href=\"checkout.jsp\">Check out a book</a></p><br/>\n");
       out.write("      <a>Manage checked out books</a>\n");
       out.write("    </main>\n");
       out.write("    \n");

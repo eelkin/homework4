@@ -6,7 +6,7 @@ Copyright (c) 2016 Breslin Wiley
 Campus Box 7947, Elon University, Elon, NC 27244
 -->
 
-<%@ include file="includes/header.html" %>
+<%@ include file="header.html" %>
 
   <form action="library" method="post">
     <input type="hidden" name="action" value="add">        
@@ -22,6 +22,6 @@ Campus Box 7947, Elon University, Elon, NC 27244
     <input type="submit" value="Checkout" class="margin-left">
   </form>
     
-<%@ include file="includes/footer.html" %>
+<%@ include file="footer.html" %>
 
 

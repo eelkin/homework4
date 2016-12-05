@@ -6,15 +6,14 @@ JSP
 + 0 index.jsp
 index.jsp
 + 1 header.html
-includes/header.html
+header.html
 + 2 footer.html
-includes/footer.html
+footer.html
 *L
-1,9:50
-14:58
-1#1,22:59
-15#0,8:80
-1#2,14:87
-22#0,3:100
-24:102
+1:50,2
+1#1,22:52
+2#0,8:73
+1#2,14:80
+9#0,3:93
+11:95
 *E
