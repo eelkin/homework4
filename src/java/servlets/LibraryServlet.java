@@ -46,26 +46,27 @@ public class LibraryServlet extends HttpServlet {
         }
         //sends user to books page, displays books
         else if (action.equals("books")) {
-            //trying to display books in database
             ArrayList<User> users = UserDB.selectUsers();            
             request.setAttribute("users", users);
             
             url = "/books.jsp";
         }
-        //this may need some work
+        
         else if (action.equals("add")) {
-            //creates user
+            //gets parameters for creating user
             String firstName = request.getParameter("firstName");
             String lastName = request.getParameter("lastName");
             String email = request.getParameter("email");
             String bookTitle = request.getParameter("bookTitle");
             
+            //creates user
             User user = new User(firstName,lastName, email, bookTitle);
             request.setAttribute("user", user);
            
             //inserts the user
             UserDB.insert(user);
             
+            // get list of users
             ArrayList<User> users = UserDB.selectUsers();            
             request.setAttribute("users", users);
             
@@ -73,13 +74,6 @@ public class LibraryServlet extends HttpServlet {
             url = "/thanks.jsp";
         }
         
-        // perform action and set URL to appropriate page
-        if (action.equals("display_users")) {            
-            // get list of users
-            ArrayList<User> users = UserDB.selectUsers();            
-            request.setAttribute("users", users);
-        }
-       
         else if (action.equals("delete")) {
             // get the user
             String email = request.getParameter("email");
