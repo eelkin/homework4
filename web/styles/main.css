@@ -55,7 +55,11 @@ input {
 input[type="text"], input[type="email"] {
   display: inline;
   width: 15em;
-  margin-left: 4.25em;
+  margin: 0 0 0 4.25em;
+}
+
+input[name="bookTitle"] {
+  width: 25em;
 }
 
 label{
