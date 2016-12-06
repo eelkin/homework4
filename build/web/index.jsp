@@ -9,7 +9,7 @@ Campus Box 8293, Elon University, Elon, NC 27244
 
     <main>
       <p><a href="library?action=checkout">Check out a book</a></p>
-      <p><a href="library?action=books">Manage checked out books</a></p><br/>
+      <p><a href="library?action=books">Manage checked out books</a></p>
     </main>
     
 <%@ include file="footer.html" %>
