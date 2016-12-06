@@ -35,22 +35,26 @@ public class LibraryServlet extends HttpServlet {
             //action = "display_users";
             action = "join";
         }
+        
         //reroutes user to index.jsp
         if (action.equals("join")) {
             url = "/index.jsp";
         } 
         //sends user to checkout page
         else if (action.equals("checkout")) {
-            //code for adding to database
             url = "/checkout.jsp";
         }
-        //sends user to books page
+        //sends user to books page, displays books
         else if (action.equals("books")) {
-            //code for adding to database
+            //trying to display books in database
+            ArrayList<User> users = UserDB.selectUsers();            
+            request.setAttribute("users", users);
+            
             url = "/books.jsp";
         }
         //this may need some work
         else if (action.equals("add")) {
+            //creates user
             String firstName = request.getParameter("firstName");
             String lastName = request.getParameter("lastName");
             String email = request.getParameter("email");

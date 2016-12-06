@@ -31,7 +31,7 @@ public class UserDB {
             statement.setString(2, user.getLastName());
             statement.setString(3, user.getEmail());
             statement.setString(4, user.getBookTitle());
-            //CHANGE THIS TO DATE 
+            //CHANGE THIS TO SQL DATE 
             java.sql.Date sqlDate = new java.sql.Date(user.getDueDate().getTime());
             //statement.setString(5, user.getDueDate());
             statement.setDate(5, sqlDate);
