@@ -10,29 +10,15 @@ body {
 }
 
 main {
-  margin: 0 auto;
   border: solid red;
-  margin-left: 50px;
-  margin-right: 50px;
-}
-
-img{
-  display: block;
-  margin: 0 auto;
-  margin-bottom: 15px; 
-}
-
-p {
-  margin:0;
-  padding:0;
-  margin-left: 10px;
-  margin-top: 10px;
+  margin: 2em;
+  padding: 1em 0 0 2em;
 }
 
 a {
   font-weight:bold;
-  margin:0;
-  padding:0;
+  margin: 0;
+  padding: 0;
 }
 
 footer {
@@ -43,6 +29,10 @@ footer {
     
 }
 
+footer p {
+  margin: 1em 2em;
+}
+
 h1 {
   text-align: center;
   display: block;
@@ -51,20 +41,34 @@ h1 {
   margin-bottom:15px;
 }
 
-footer p {
-  margin-top: 15px;
+img {
+  display: block;
+  margin: 1em auto;
 }
-
-/*
-form {
-  margin: 15px;
-  padding: 15px;
-}
-*/
 
 input {
+  display: inline-block;
+  float: left;
+  margin: 0 0 0 5em;
+}
+
+input[type="text"], input[type="email"] {
   display: inline;
-  margin-left: 50px;
+  width: 15em;
+  margin-left: 4.25em;
+}
+
+label{
+  display: inline-block;
+  float: left;
+  clear: left;
+  width: 7em;
+  text-align: left;
+}
+
+p {
+  margin: 0;
+  padding: auto;
 }
 
 section {
@@ -73,28 +77,20 @@ section {
   border: solid red;
 }
 
-td {
-  margin-top: 15px;
-}
-
-h2 {
-  margin-left: 30px;
-}
-
 section p {
-  margin: 10px auto;
-  margin-left: 10px;
+  margin: 10px auto 0 10px;
 }
 
-label{
-  display: inline-block;
-  float: left;
-  clear: left;
-  width: 250px;
-  text-align: right;
+td {
+  margin: 15px 0 0 0;
 }
 
-input {
-  display: inline-block;
+.checkout {
+  margin: .5em 0 4em 0;
+  padding: 0;
+}
+
+.checkout-label {
   float: left;
+  padding: .25em
 }

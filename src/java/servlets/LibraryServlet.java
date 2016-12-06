@@ -79,14 +79,13 @@ public class LibraryServlet extends HttpServlet {
             String email = request.getParameter("email");
             User user = UserDB.selectUser(email);
             
-            // delte the user
+            // delete the user
             UserDB.delete(user);
             
             // get and set updated users
             ArrayList<User> users = UserDB.selectUsers();            
             request.setAttribute("users", users);            
         }
-        
         
         getServletContext()
                 .getRequestDispatcher(url)
