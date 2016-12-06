@@ -20,7 +20,7 @@ CREATE TABLE Books (
   DueDate DATETIME,
   Overdue VARCHAR(50),
   
-  PRIMARY KEY(CheckoutID) 
+  PRIMARY KEY(CheckoutID)
 );
 
 /*

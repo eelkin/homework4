@@ -84,7 +84,7 @@ public class LibraryServlet extends HttpServlet {
             
             // get and set updated users
             ArrayList<User> users = UserDB.selectUsers();            
-            request.setAttribute("users", users);            
+            request.setAttribute("users", users);
         }
         
         getServletContext()
