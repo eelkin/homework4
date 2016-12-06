@@ -3,7 +3,7 @@
  * Campus Box 7947, Elon University, Elon, NC 27244
  * 
  * Copyright (c) 2016 Breslin Wiley
- * Campus Box 7947, Elon University, Elon, NC 27244
+ * Campus Box 8293, Elon University, Elon, NC 27244
  */
 
 CREATE DATABASE IF NOT EXISTS nightsound;
