@@ -7,7 +7,7 @@ Campus Box 8293, Elon University, Elon, NC 27244
 -->
 
 <%@ include file="header.html" %>
-
+<main>
   <form action="library" method="post">
     <input type="hidden" name="action" value="add">        
     <label class="pad-top">First Name:</label>
@@ -21,7 +21,7 @@ Campus Box 8293, Elon University, Elon, NC 27244
     <label>&nbsp;</label>
     <input type="submit" value="Checkout" class="margin-left">
   </form>
-    
+</main>    
 <%@ include file="footer.html" %>
 
 

@@ -22,15 +22,22 @@ Campus Box 8293, Elon University, Elon, NC 27244
 
   <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
   <c:forEach var="user" items="${users}">
-  <tr>
-    <td>${user.firstName} ${user.lastName}</td>
-    <td>${user.email}</td>
-    <td>${user.bookTitle}</td>
-    <td>${user.formattedDueDate}</td>
-    <td>${user.overdue}</td>
-    <%-- Replace with button --%>
-    <td><a href="userAdmin?action=delete_user&amp;email=${user.email}">Check In</a></td>
-  </tr>
+    <tr>
+      <td>${user.firstName} ${user.lastName}</td>
+      <td>${user.email}</td>
+      <td>${user.bookTitle}</td>
+      <td>${user.formattedDueDate}</td>
+      <td>${user.overdue}</td>
+      <%-- Replace with button --%>
+      <%--<td><a href="userAdmin?action=delete_user&amp;email=${user.email}">Check In</a></td>--%>
+      <td>
+        <form action="library" method="post">
+          <input type="hidden" name="action" value="delete">
+          <button type="submit">Check In</button>
+        </form>
+      </td>
+    </tr>
+    
   </c:forEach>
 
 </table>
