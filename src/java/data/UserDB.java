@@ -23,7 +23,7 @@ public class UserDB {
         PreparedStatement statement = null;
 
         String query
-                = "INSERT INTO User (FirstName, LastName, Email, BookTitle, DueDate, Overdue) "
+                = "INSERT INTO Books (FirstName, LastName, Email, BookTitle, DueDate, Overdue) "
                 + "VALUES (?, ?, ?, ?, ?, ?)";
         try {
             statement = connection.prepareStatement(query);
@@ -83,7 +83,7 @@ public class UserDB {
         Connection connection = pool.getConnection();
         PreparedStatement statement = null;
 
-        String query = "DELETE FROM User "
+        String query = "DELETE FROM Books "
                 + "WHERE Email = ? AND BookTitle = ?";
         try {
             statement = connection.prepareStatement(query);
@@ -128,7 +128,7 @@ public class UserDB {
         PreparedStatement statement = null;
         ResultSet set = null;
 
-        String query = "SELECT * FROM User "
+        String query = "SELECT * FROM Books "
                 + "WHERE Email = ?";
         try {
             statement = connection.prepareStatement(query);
@@ -164,11 +164,11 @@ public class UserDB {
         PreparedStatement statement = null;
         ResultSet set = null;
         
-        String query = "SELECT * FROM User";
+        String query = "SELECT * FROM Books ";
         try {
             statement = connection.prepareStatement(query);
             set = statement.executeQuery();
-            ArrayList<User> users = new ArrayList<User>();
+            ArrayList<User> users = new ArrayList<>();
             while (set.next())
             {
                 User user = new User();
