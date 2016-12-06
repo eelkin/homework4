@@ -84,7 +84,7 @@ public class UserDB {
         PreparedStatement statement = null;
 
         String query = "DELETE FROM Books "
-                + "WHERE Email = ? AND BookTitle = ?";
+                + "WHERE Email = ?";
         try {
             statement = connection.prepareStatement(query);
             statement.setString(1, user.getEmail());

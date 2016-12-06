@@ -104,7 +104,7 @@ public class LibraryServlet extends HttpServlet {
             request.setAttribute("users", users);            
         }
         */
-        else if (action.equals("deleteUser")) {
+        else if (action.equals("delete_user")) {
             // get the user
             String email = request.getParameter("email");
             User user = UserDB.selectUser(email);
