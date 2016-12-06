@@ -56,7 +56,7 @@ public class LibraryServlet extends HttpServlet {
             User user = UserDB.selectUser(email);
             
             //inserts the user
-            UserDB.insert(user);
+            //UserDB.insert(user);
             
             //reroutes to thanks.jsp
             url = "/thanks.jsp";
