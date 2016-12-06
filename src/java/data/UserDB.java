@@ -32,7 +32,9 @@ public class UserDB {
             statement.setString(3, user.getEmail());
             statement.setString(4, user.getBookTitle());
             //CHANGE THIS TO DATE 
-            statement.setString(5, user.getDueDate());
+            java.sql.Date sqlDate = new java.sql.Date(user.getDueDate().getTime());
+            //statement.setString(5, user.getDueDate());
+            statement.setDate(5, sqlDate);
             statement.setString(6, user.getOverdue());
             return statement.executeUpdate();
         } catch (SQLException e) {
@@ -140,7 +142,9 @@ public class UserDB {
                 user.setEmail(set.getString("Email"));
                 user.setBookTitle(set.getString("BookTitle"));
                 //change due date to datetime
-                user.setDueDate(set.getString("DueDate"));
+                //user.setDueDate(set.getString("DueDate"));
+                //possibly convert to java.util
+                user.setDueDate(set.getDate("DueDate"));
                 user.setOverdue(set.getString("Overdue"));
             }
             return user;
@@ -173,7 +177,9 @@ public class UserDB {
                 user.setEmail(set.getString("Email"));
                 user.setBookTitle(set.getString("BookTitle"));
                 //change due date to datetime
-                user.setDueDate(set.getString("DueDate"));
+                //user.setDueDate(set.getString("DueDate"));
+                //possibly convert to java.util
+                user.setDueDate(set.getDate("DueDate"));
                 user.setOverdue(set.getString("Overdue"));
                 users.add(user);
             }

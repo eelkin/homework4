@@ -27,8 +27,8 @@ public class User {
     private String email;
     private String bookTitle;
     //work with calendar/date
-    private String dueDate;
-    //private Date dueDate
+    //private String dueDate;
+    private Date dueDate;
     private String overdue;
 
     public User() {
@@ -37,20 +37,27 @@ public class User {
         email = "";
         bookTitle = "";
         //should be date
-        dueDate = "";
-        //dueDate = null;
+        //dueDate = "";
+        dueDate = null;
         overdue = "";
     }
 
     public User(String firstName, String lastName, String email,
-            String bookTitle, String dueDate, String overdue) {
+            String bookTitle) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
         this.bookTitle = bookTitle;
         //dueDate must be Date object
-        this.dueDate = dueDate;
-        this.overdue = overdue;
+        Calendar calendar = GregorianCalendar.getInstance();
+        Date today = new Date();
+        calendar.add(Calendar.WEEK_OF_YEAR, 2);
+        this.dueDate = calendar.getTime();
+        if(today.after(dueDate)) {
+          this.overdue = "overdue";
+        } else {
+          this.overdue = "";
+        }
     }
 
     public String getFirstName() {
@@ -84,25 +91,22 @@ public class User {
     public void setBookTitle(String bookTitle) {
         this.bookTitle = bookTitle;
     }
-    
-    //getter/setter should be date
-    public String getDueDate() {
+ 
+    public Date getDueDate() {
         return dueDate;
     }
-
-    public void setDueDate(String dueDate) {
-        this.dueDate = dueDate;
-    }
     
-    /*
-    public void setDueDate(Day dueDate) {
-        //converts to 
+    public void setDueDate(Date dueDate) {
+        //finds due date
+        this.dueDate = dueDate;
+        
+        //formats dueDate
+        /*
         SimpleDateFormat sdf = new SimpleDateFormat("MM-dd-yyyy");
         String formattedDueDate = sdf.format(dueDate);
-        this.dueDate = formattedDueDate
+        this.dueDate = formattedDueDate;
+        */
     }
-    
-    */
     
     public String getOverdue() {
         return overdue;
@@ -111,14 +115,4 @@ public class User {
     public void setOverdue(String overdue) {
         this.overdue = overdue;
     }
-    
-    /*
-    public void setOverdue(Date today, Date dueDate) {
-      if(today.before(dueDate) {
-        this.overdue = "overdue";
-      }
-    */
-    
-    
-  
 }
