@@ -16,11 +16,11 @@ CREATE TABLE Books (
   FirstName VARCHAR(50),
   LastName VARCHAR(50),
   Email VARCHAR(50),
-  BookTitle NOT NULL VARCHAR(50),
+  BookTitle VARCHAR(50),
   DueDate DATETIME,
   Overdue VARCHAR(50),
   
-  PRIMARY KEY(BookTitle) 
+  PRIMARY KEY(CheckoutID) 
 );
 
 /*
