@@ -30,10 +30,8 @@ public class UserDB {
             statement.setString(1, user.getFirstName());
             statement.setString(2, user.getLastName());
             statement.setString(3, user.getEmail());
-            statement.setString(4, user.getBookTitle());
-            //CHANGE THIS TO SQL DATE 
+            statement.setString(4, user.getBookTitle()); 
             java.sql.Date sqlDate = new java.sql.Date(user.getDueDate().getTime());
-            //statement.setString(5, user.getDueDate());
             statement.setDate(5, sqlDate);
             statement.setString(6, user.getOverdue());
             return statement.executeUpdate();
@@ -86,9 +84,6 @@ public class UserDB {
                 user.setLastName(set.getString("LastName"));
                 user.setEmail(set.getString("Email"));
                 user.setBookTitle(set.getString("BookTitle"));
-                //change due date to datetime
-                //user.setDueDate(set.getString("DueDate"));
-                //possibly convert to java.util
                 user.setDueDate(set.getDate("DueDate"));
                 user.setOverdue(set.getString("Overdue"));
             }
@@ -121,9 +116,6 @@ public class UserDB {
                 user.setLastName(set.getString("LastName"));
                 user.setEmail(set.getString("Email"));
                 user.setBookTitle(set.getString("BookTitle"));
-                //change due date to datetime
-                //user.setDueDate(set.getString("DueDate"));
-                //possibly convert to java.util
                 user.setDueDate(set.getDate("DueDate"));
                 user.setOverdue(set.getString("Overdue"));
                 users.add(user);
