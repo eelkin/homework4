@@ -51,17 +51,26 @@ public class LibraryServlet extends HttpServlet {
         }
         //this may need some work
         else if (action.equals("add")) {
+            String firstName = request.getParameter("firstName");
+            String lastName = request.getParameter("lastName");
+            String email = request.getParameter("email");
+            String bookTitle = request.getParameter("bookTitle");
+            
+            User user = new User(firstName,lastName, email, bookTitle);
+            request.setAttribute("user", user);
+            
+            /*
             //gets user
             String email = request.getParameter("email");
             User user = UserDB.selectUser(email);
+            */
             
-            /*
-            inserts the user
+            //inserts the user
             UserDB.insert(user);
             
             ArrayList<User> users = UserDB.selectUsers();            
             request.setAttribute("users", users);
-            */
+            
             
             //reroutes to thanks.jsp
             url = "/thanks.jsp";
