@@ -15,9 +15,9 @@ Campus Box 8293, Elon University, Elon, NC 27244
     <tr>
       <th>Patron Name</th>
       <th>Email Address</th>
-      <th>Book Title</th>
+      <th class="long">Book Title</th>
       <th>Due Date</th>
-      <th>Overdue</th>
+      <th class="short">Overdue</th>
     </tr>
 
     <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
