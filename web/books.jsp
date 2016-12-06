@@ -29,7 +29,7 @@ Campus Box 8293, Elon University, Elon, NC 27244
     <td>${user.dueDate}</td>
     <td>${user.overdue}</td>
     <%-- Replace with buttons --%>
-    <td><a href="userAdmin?action=delete_user&amp;email=${user.email}">Check In</a></td>
+    <td><a href="userAdmin?action=deleteUser&amp;email=${user.email}">Check In</a></td>
   </tr>
   </c:forEach>
 

@@ -62,19 +62,12 @@ public class LibraryServlet extends HttpServlet {
             
             User user = new User(firstName,lastName, email, bookTitle);
             request.setAttribute("user", user);
-            
-            /*
-            //gets user
-            String email = request.getParameter("email");
-            User user = UserDB.selectUser(email);
-            */
-            
+           
             //inserts the user
             UserDB.insert(user);
             
             ArrayList<User> users = UserDB.selectUsers();            
             request.setAttribute("users", users);
-            
             
             //reroutes to thanks.jsp
             url = "/thanks.jsp";
@@ -85,13 +78,15 @@ public class LibraryServlet extends HttpServlet {
             // get list of users
             ArrayList<User> users = UserDB.selectUsers();            
             request.setAttribute("users", users);
-        } 
+        }
+        /*
         else if (action.equals("display_user")) {
             String emailAddress = request.getParameter("email");
             User user = UserDB.selectUser(emailAddress);
             session.setAttribute("user", user);
             url = "/user.jsp";
         }
+        */
         /*
         else if (action.equals("update_user")) {
             // get parameters from the request
@@ -109,7 +104,7 @@ public class LibraryServlet extends HttpServlet {
             request.setAttribute("users", users);            
         }
         */
-        else if (action.equals("delete_user")) {
+        else if (action.equals("deleteUser")) {
             // get the user
             String email = request.getParameter("email");
             User user = UserDB.selectUser(email);
