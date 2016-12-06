@@ -31,6 +31,7 @@ public class UserDB {
             statement.setString(2, user.getLastName());
             statement.setString(3, user.getEmail());
             statement.setString(4, user.getBookTitle());
+            //CHANGE THIS TO DATE 
             statement.setString(5, user.getDueDate());
             statement.setString(6, user.getOverdue());
             return statement.executeUpdate();
