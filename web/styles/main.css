@@ -5,6 +5,9 @@ Campus Box 7947, Elon University, Elon, NC 27244
 Copyright (c) 2016 Breslin Wiley
 Campus Box 8293, Elon University, Elon, NC 27244
 */
+/**
+This is the main CSS file used to style the web application.
+*/
 body {
   font-family: sans-serif;
 }
@@ -51,7 +54,7 @@ input {
 
 input[type="text"], input[type="email"] {
   display: inline;
-  margin: 0 0 0The  4.25em;
+  margin: 0 0 0 4.25em;
   width: 15em;
 }
 
