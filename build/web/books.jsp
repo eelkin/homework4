@@ -8,7 +8,7 @@ Campus Box 7947, Elon University, Elon, NC 27244
 
 <%@ include file="header.html" %>
 
-<section>
+<main>
 <h2>Currently checked out books</h2>
 <table>
 
@@ -36,5 +36,5 @@ Campus Box 7947, Elon University, Elon, NC 27244
 </table>
   
   <p><a href="library">Return to front page</a></p>
-</section>
+</main>
 <%@ include file="footer.html" %>

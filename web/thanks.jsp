@@ -6,6 +6,7 @@ Copyright (c) 2016 Breslin Wiley
 Campus Box 7947, Elon University, Elon, NC 27244
 -->
 <%@ include file="header.html" %>
+<main>
   <p>
     Thank you for your patronage of the Belk Library. 
     You're successfully checked out the book, ${user.bookTitle}.
@@ -14,4 +15,5 @@ Campus Box 7947, Elon University, Elon, NC 27244
     overdue.
   </p>
   <p><a href="library">Return to front page</a></p>
+</main>
 <%@ include file="footer.html" %>
