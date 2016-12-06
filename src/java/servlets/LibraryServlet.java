@@ -5,6 +5,7 @@
  * Copyright (c) 2016 Breslin Wiley
  * Campus Box 8293, Elon University, Elon, NC 27244
  */
+
 package servlets;
 
 import java.io.IOException;
@@ -19,9 +20,17 @@ import javax.servlet.http.HttpSession;
 import model.User;
 import data.UserDB;
 
+/**
+ * The servlet for the library application
+ */
 public class LibraryServlet extends HttpServlet {
 
     @Override
+    /**
+     * Submits data for processing
+     * @param request object from client
+     * @param response object from server
+     */
     protected void doPost(HttpServletRequest request,
             HttpServletResponse response)
             throws ServletException, IOException {
@@ -91,7 +100,11 @@ public class LibraryServlet extends HttpServlet {
                 .getRequestDispatcher(url)
                 .forward(request, response);
     }    
-    
+    /**
+     * Requests data
+     * @param request object from client
+     * @param response object from server
+     */
     @Override
     protected void doGet(HttpServletRequest request,
             HttpServletResponse response)

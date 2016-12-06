@@ -8,21 +8,24 @@ Campus Box 8293, Elon University, Elon, NC 27244
 -->
 <web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
     <servlet>
-        <servlet-name>LibraryServlet</servlet-name>
-        <servlet-class>servlets.LibraryServlet</servlet-class>
+      <servlet-name>LibraryServlet</servlet-name>
+      <servlet-class>servlets.LibraryServlet</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>LibraryServlet</servlet-name>
-        <url-pattern>/library</url-pattern>
+      <servlet-name>LibraryServlet</servlet-name>
+      <url-pattern>/library</url-pattern>
     </servlet-mapping>
+    <error-page>
+      <error-code>404</error-code>
+      <location>/error.jsp</location>
+    </error-page> 
     <session-config>
-        <session-timeout>
-            30
-        </session-timeout>
+      <session-timeout>
+        30
+      </session-timeout>
     </session-config>
     
     <welcome-file-list>
-        
-        <welcome-file>library</welcome-file>
+      <welcome-file>library</welcome-file>
     </welcome-file-list>
 </web-app>
