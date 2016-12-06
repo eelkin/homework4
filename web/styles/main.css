@@ -22,11 +22,9 @@ a {
 }
 
 footer {
-  display:block;
   border-top: solid blue;
-  margin: 0 auto;
-  margin-top: 10px;
-    
+  display:block;
+  margin: 1em auto;
 }
 
 footer p {
@@ -34,11 +32,10 @@ footer p {
 }
 
 h1 {
-  text-align: center;
   display: block;
-  margin: 0 auto;
   font-weight: bold;
-  margin-bottom:15px;
+  margin: 0 auto;
+  text-align: center;
 }
 
 img {
@@ -54,8 +51,8 @@ input {
 
 input[type="text"], input[type="email"] {
   display: inline;
-  width: 15em;
   margin: 0 0 0The  4.25em;
+  width: 15em;
 }
 
 input[name="bookTitle"] {
@@ -63,11 +60,11 @@ input[name="bookTitle"] {
 }
 
 label{
+  clear: left;
   display: inline-block;
   float: left;
-  clear: left;
-  width: 7em;
   text-align: left;
+  width: 7em;
 }
 
 p {
