@@ -26,7 +26,7 @@ Campus Box 8293, Elon University, Elon, NC 27244
     <td>${user.firstName} ${user.lastName}</td>
     <td>${user.email}</td>
     <td>${user.bookTitle}</td>
-    <td>${user.dueDate}</td>
+    <td>${user.formattedDueDate}</td>
     <td>${user.overdue}</td>
     <%-- Replace with button --%>
     <td><a href="userAdmin?action=delete_user&amp;email=${user.email}">Check In</a></td>

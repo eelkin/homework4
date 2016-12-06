@@ -29,6 +29,7 @@ public class User {
     //work with calendar/date
     //private String dueDate;
     private Date dueDate;
+    private String formattedDueDate;
     private String overdue;
 
     public User() {
@@ -39,6 +40,7 @@ public class User {
         //should be date
         //dueDate = "";
         dueDate = null;
+        formattedDueDate = "";
         overdue = "";
     }
 
@@ -53,6 +55,11 @@ public class User {
         Date today = new Date();
         calendar.add(Calendar.WEEK_OF_YEAR, 2);
         this.dueDate = calendar.getTime();
+        
+        SimpleDateFormat sdf = new SimpleDateFormat("MM-dd-yyyy");
+        String formattedDueDate = sdf.format(dueDate);
+        this.formattedDueDate = formattedDueDate;
+        
         if(today.after(dueDate)) {
           this.overdue = "overdue";
         } else {
@@ -106,6 +113,13 @@ public class User {
         String formattedDueDate = sdf.format(dueDate);
         this.dueDate = formattedDueDate;
         */
+    }
+    
+    public void getFormattedDueDate() {
+        //formats due date for EL
+        SimpleDateFormat sdf = new SimpleDateFormat("MM-dd-yyyy");
+        String formattedDueDate = sdf.format(dueDate);
+        this.formattedDueDate = formattedDueDate;
     }
     
     public String getOverdue() {
