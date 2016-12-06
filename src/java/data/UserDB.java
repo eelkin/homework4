@@ -45,39 +45,7 @@ public class UserDB {
             pool.freeConnection(connection);
         }
     }
-    /*
-    public static int update(User user) {
-        ConnectionPool pool = ConnectionPool.getInstance();
-        Connection connection = pool.getConnection();
-        PreparedStatement statement = null;
 
-        String query = "UPDATE User SET "
-                + "FirstName = ?, "
-                + "LastName = ? "
-                + "Email = ? "
-                + "BookTitle = ? "
-                + "DueDate = ? "
-                + "Overdue = ?";
-        try {
-            statement = connection.prepareStatement(query);
-            statement.setString(1, user.getFirstName());
-            statement.setString(2, user.getLastName());
-            statement.setString(3, user.getEmail());
-            statement.setString(4, user.getBookTitle());
-            //CHANGE THIS TO DATE 
-            statement.setString(5, user.getDueDate());
-            statement.setString(6, user.getOverdue());
-
-            return statement.executeUpdate();
-        } catch (SQLException e) {
-            System.out.println(e);
-            return 0;
-        } finally {
-            DBUtil.closePreparedStatement(statement);
-            pool.freeConnection(connection);
-        }
-    }
-    */
     public static int delete(User user) {
         ConnectionPool pool = ConnectionPool.getInstance();
         Connection connection = pool.getConnection();
@@ -98,30 +66,7 @@ public class UserDB {
             pool.freeConnection(connection);
         }
     }
-    /*
-    public static boolean emailExists(String email) {
-        ConnectionPool pool = ConnectionPool.getInstance();
-        Connection connection = pool.getConnection();
-        PreparedStatement statement = null;
-        ResultSet set = null;
-
-        String query = "SELECT Email FROM User "
-                + "WHERE Email = ?";
-        try {
-            statement = connection.prepareStatement(query);
-            statement.setString(1, email);
-            set = statement.executeQuery();
-            return set.next();
-        } catch (SQLException e) {
-            System.out.println(e);
-            return false;
-        } finally {
-            DBUtil.closeResultSet(set);
-            DBUtil.closePreparedStatement(statement);
-            pool.freeConnection(connection);
-        }
-    }
-    */
+   
     public static User selectUser(String email) {
         ConnectionPool pool = ConnectionPool.getInstance();
         Connection connection = pool.getConnection();

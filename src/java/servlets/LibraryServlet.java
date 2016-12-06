@@ -79,31 +79,7 @@ public class LibraryServlet extends HttpServlet {
             ArrayList<User> users = UserDB.selectUsers();            
             request.setAttribute("users", users);
         }
-        /*
-        else if (action.equals("display_user")) {
-            String emailAddress = request.getParameter("email");
-            User user = UserDB.selectUser(emailAddress);
-            session.setAttribute("user", user);
-            url = "/user.jsp";
-        }
-        */
-        /*
-        else if (action.equals("update_user")) {
-            // get parameters from the request
-            String firstName = request.getParameter("firstName");
-            String lastName = request.getParameter("lastName");
-
-            // get and update user
-            User user = (User) session.getAttribute("user");        
-            user.setFirstName(firstName);
-            user.setLastName(lastName);
-            UserDB.update(user);
-
-            // get and set updated users
-            ArrayList<User> users = UserDB.selectUsers();            
-            request.setAttribute("users", users);            
-        }
-        */
+       
         else if (action.equals("delete_user")) {
             // get the user
             String email = request.getParameter("email");
