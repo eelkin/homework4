@@ -28,6 +28,7 @@ public class User {
     private String bookTitle;
     //work with calendar/date
     private String dueDate;
+    //private Date dueDate
     private String overdue;
 
     public User() {
@@ -37,6 +38,7 @@ public class User {
         bookTitle = "";
         //should be date
         dueDate = "";
+        //dueDate = null;
         overdue = "";
     }
 
@@ -46,6 +48,7 @@ public class User {
         this.lastName = lastName;
         this.email = email;
         this.bookTitle = bookTitle;
+        //dueDate must be Date object
         this.dueDate = dueDate;
         this.overdue = overdue;
     }
@@ -91,6 +94,16 @@ public class User {
         this.dueDate = dueDate;
     }
     
+    /*
+    public void setDueDate(Day dueDate) {
+        //converts to 
+        SimpleDateFormat sdf = new SimpleDateFormat("MM-dd-yyyy");
+        String formattedDueDate = sdf.format(dueDate);
+        this.dueDate = formattedDueDate
+    }
+    
+    */
+    
     public String getOverdue() {
         return overdue;
     }
@@ -98,6 +111,13 @@ public class User {
     public void setOverdue(String overdue) {
         this.overdue = overdue;
     }
+    
+    /*
+    public void setOverdue(Date today, Date dueDate) {
+      if(today.before(dueDate) {
+        this.overdue = "overdue";
+      }
+    */
     
     
   

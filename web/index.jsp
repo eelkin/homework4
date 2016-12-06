@@ -9,7 +9,7 @@ Campus Box 7947, Elon University, Elon, NC 27244
 
     <main>
       <p><a href="library?action=checkout">Check out a book</a></p><br/>
-      <a><a href="library?action=books">Manage checked out books</a></a>
+      <p><a href="library?action=books">Manage checked out books</a></p><br/>
     </main>
     
 <%@ include file="footer.html" %>
