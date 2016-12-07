@@ -64,11 +64,11 @@ public class UserDB {
         PreparedStatement statement = null;
 
         String query = "DELETE FROM Books "
-                + "WHERE Email = ?";
+                + "WHERE Email = ? AND BookTitle = ?";
         try {
             statement = connection.prepareStatement(query);
             statement.setString(1, user.getEmail());
-
+            statement.setString(2, user.getBookTitle());
             return statement.executeUpdate();
         } catch (SQLException e) {
             System.out.println(e);
@@ -81,19 +81,21 @@ public class UserDB {
     /**
      * Selects one user from the database
      * @param the user's email
+     * @param the book title
      * @return the user
      */
-    public static User selectUser(String email) {
+    public static User selectUser(String email, String bookTitle) {
         ConnectionPool pool = ConnectionPool.getInstance();
         Connection connection = pool.getConnection();
         PreparedStatement statement = null;
         ResultSet set = null;
 
         String query = "SELECT * FROM Books "
-                + "WHERE Email = ?";
+                + "WHERE Email = ? AND BookTitle = ?";
         try {
             statement = connection.prepareStatement(query);
             statement.setString(1, email);
+            statement.setString(2, bookTitle);
             set = statement.executeQuery();
             User user = null;
             if (set.next()) {

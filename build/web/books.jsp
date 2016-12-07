@@ -34,6 +34,7 @@ Campus Box 8293, Elon University, Elon, NC 27244
           <form action="library" method="post">
             <input type="hidden" name="action" value="delete">
             <input type="hidden" name="email" value="${user.email}">
+            <input type="hidden" name="bookTitle" value="${user.bookTitle}">
             <button type="submit">Check In</button>
           </form>
         </td>
