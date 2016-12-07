@@ -94,6 +94,8 @@ public class LibraryServlet extends HttpServlet {
             // get and set updated users
             ArrayList<User> users = UserDB.selectUsers();            
             request.setAttribute("users", users);
+            
+            url = "/books.jsp";
         }
         
         getServletContext()
