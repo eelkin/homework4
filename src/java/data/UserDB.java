@@ -15,15 +15,23 @@ import java.util.ArrayList;
 
 import model.User;
 
+/**
+ * This class interacts with the MySQL database and executes SQL commands
+ */
 public class UserDB {
-  
+    /**
+     * Inserts the user into the database
+     * @param the user
+     * @return the executed insert command
+     */
     public static int insert(User user) {
         ConnectionPool pool = ConnectionPool.getInstance();
         Connection connection = pool.getConnection();
         PreparedStatement statement = null;
 
         String query
-                = "INSERT INTO Books (FirstName, LastName, Email, BookTitle, DueDate, Overdue) "
+                = "INSERT INTO Books (FirstName, LastName, Email, "
+                + "BookTitle, DueDate, Overdue) "
                 + "VALUES (?, ?, ?, ?, ?, ?)";
         try {
             statement = connection.prepareStatement(query);
@@ -31,7 +39,8 @@ public class UserDB {
             statement.setString(2, user.getLastName());
             statement.setString(3, user.getEmail());
             statement.setString(4, user.getBookTitle()); 
-            java.sql.Date sqlDate = new java.sql.Date(user.getDueDate().getTime());
+            java.sql.Date sqlDate = 
+                    new java.sql.Date(user.getDueDate().getTime());
             statement.setDate(5, sqlDate);
             statement.setString(6, user.getOverdue());
             return statement.executeUpdate();
@@ -43,7 +52,12 @@ public class UserDB {
             pool.freeConnection(connection);
         }
     }
-
+    
+    /**
+     * Inserts the user into the database
+     * @param the user
+     * @return the executed insert command
+     */
     public static int delete(User user) {
         ConnectionPool pool = ConnectionPool.getInstance();
         Connection connection = pool.getConnection();
@@ -64,7 +78,11 @@ public class UserDB {
             pool.freeConnection(connection);
         }
     }
-   
+    /**
+     * Selects one user from the database
+     * @param the user's email
+     * @return the user
+     */
     public static User selectUser(String email) {
         ConnectionPool pool = ConnectionPool.getInstance();
         Connection connection = pool.getConnection();
@@ -98,6 +116,10 @@ public class UserDB {
         }
     }
     
+    /**
+     * Selects all of the user's in the database and adds them to an ArrayList
+     * @return an ArrayList of all the users in the database
+     */
     public static ArrayList<User> selectUsers() {
         ConnectionPool pool = ConnectionPool.getInstance();
         Connection connection = pool.getConnection();

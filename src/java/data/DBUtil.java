@@ -10,10 +10,16 @@ package data;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-
+/**
+ * Utility class so server can talk to database through Java
+ */
 public class DBUtil {
   
-  public static void closeStatement(Statement s) {
+   /**
+    * Closes the SQL statement
+    * @param the SQL statement
+    */
+    public static void closeStatement(Statement s) {
         try {
             if (s != null) {
                 s.close();
@@ -22,7 +28,11 @@ public class DBUtil {
             System.out.println(e);
         }
     }
-
+    
+   /**
+    * Closes the prepared statement
+    * @param the prepared statement
+    */
     public static void closePreparedStatement(Statement ps) {
         try {
             if (ps != null) {
@@ -32,7 +42,11 @@ public class DBUtil {
             System.out.println(e);
         }
     }
-
+    
+   /**
+    * Closes the result set
+    * @param the result set
+    */
     public static void closeResultSet(ResultSet rs) {
         try {
             if (rs != null) {

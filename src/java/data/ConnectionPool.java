@@ -12,12 +12,14 @@ import java.sql.SQLException;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
 import javax.sql.DataSource;
-
+/**
+ * Connection pool for connecting to database
+ */
 public class ConnectionPool {
 
     private static ConnectionPool pool = null;
     private static DataSource dataSource = null;
-
+    
     private ConnectionPool() {
         try {
             InitialContext ic = new InitialContext();
@@ -26,14 +28,20 @@ public class ConnectionPool {
             System.out.println(e);
         }
     }
-
+    /**
+     * Creates connection pool
+     * @return connection pool
+     */
     public static synchronized ConnectionPool getInstance() {
         if (pool == null) {
             pool = new ConnectionPool();
         }
         return pool;
     }
-
+    /**
+     * Creates connection for connection pool
+     * @return connection
+     */
     public Connection getConnection() {
         try {
             return dataSource.getConnection();
@@ -42,7 +50,11 @@ public class ConnectionPool {
             return null;
         }
     }
-
+    
+    /**
+     * Frees up the connectio by closing connection
+     * @param connection
+     */
     public void freeConnection(Connection c) {
         try {
             c.close();
